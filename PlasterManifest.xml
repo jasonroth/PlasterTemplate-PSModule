@@ -35,7 +35,7 @@
             <file source='' destination='.vscode'/>
             <file source='.vscode\settings.json' destination=''/>
             <file source='.vscode\tasks.json' destination=''/> -->
-        <message>Creating code folders</message>
+        <!-- <message>Creating code folders</message>
             <file source='' destination='$PLASTER_PARAM_ModuleName'/>
             <file source='' destination='$PLASTER_PARAM_ModuleName\public'/>
             <file source='' destination='$PLASTER_PARAM_ModuleName\private'/>
@@ -46,7 +46,7 @@
             <file source='.github\ISSUE_TEMPLATE\Feature_request.md' destination='' condition='$PLASTER_PARAM_GitHub -eq "Yes"'/>
             <file source='.github\PULL_REQUEST_TEMPLATE.md' destination='' condition='$PLASTER_PARAM_GitHub -eq "Yes"'/>
             <templateFile source='code-of-conduct.md' destination='' condition='$PLASTER_PARAM_GitHub -eq "Yes"'/>
-            <templateFile source='contributing.md' destination='' condition='$PLASTER_PARAM_GitHub -eq "Yes"'/>
+            <templateFile source='contributing.md' destination='' condition='$PLASTER_PARAM_GitHub -eq "Yes"'/> -->
         <message condition='$PLASTER_PARAM_License -like "Yes"'>Creating license file</message>
         <templateFile source='LICENSE.md' destination='' condition='$PLASTER_PARAM_License -like "Yes"'/>
         <message>Deploying root directory files</message>
