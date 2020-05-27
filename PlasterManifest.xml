@@ -12,19 +12,20 @@
     <parameters>
         <parameter name='AuthorName' type="user-fullname" prompt="Module author's name" />
         <parameter name='AuthorEmail' type="user-email" prompt="Contributer/Owner email" />
+        <parameter name='CompanyName' type="text" prompt="Contributer/Owner email" />
         <parameter name='ModuleName' type="text" prompt="Name of your module" />
         <parameter name='ModuleDescription' type="text" prompt="Brief description on this module" />
         <parameter name='ModuleVersion' type="text" prompt="Initial module version" default='0.0.1' />
-        <parameter name='ModuleFolders' type = 'multichoice' prompt='Please select folders to include' default='0,1'>
+        <!-- <parameter name='ModuleFolders' type = 'multichoice' prompt='Please select folders to include' default='0,1'>
             <choice label='&amp;public' value='public' help='Folder containing public functions'/>
             <choice label='&amp;private' value='private' help='Folder containing internal functions that are not exposed to users'/>
             <choice label='&amp;classes' value='classes' help='Folder containing classes'/>
             <choice label='&amp;resources' value='resources' help='Folder containing any resources required by the module'/>
-        </parameter>
-        <parameter name='GitHub' type = 'choice' prompt='Include GitHub Support? (Issue/PR Templates, Code of Conduct and Contribution guide)' default='0'>
+        </parameter> -->
+        <!-- <parameter name='GitHub' type = 'choice' prompt='Include GitHub Support? (Issue/PR Templates, Code of Conduct and Contribution guide)' default='0'>
             <choice label='&amp;Yes' value='Yes' help='Include files'/>
             <choice label='&amp;No' value='No' help='Do not include files'/>
-        </parameter>
+        </parameter> -->
         <parameter name='License' type = 'choice' prompt='Add an MIT License?' default='0'>
             <choice label='&amp;Yes' value='Yes' help='Adds LICENSE.md'/>
             <choice label='&amp;No' value='No' help='Does not adds LICENSE.md'/>
@@ -69,7 +70,7 @@
                            moduleVersion='$PLASTER_PARAM_ModuleVersion'
                            rootModule='${PLASTER_PARAM_ModuleName}.psm1'
                            author='$PLASTER_PARAM_AuthorName'
-                           companyName='IHG'
+                           companyName='$PLASTER_PARAM_CompanyName'
                            description='$PLASTER_PARAM_ModuleDescription'
                            encoding='UTF8-NoBOM'/>
     </content>
