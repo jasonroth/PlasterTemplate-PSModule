@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <plasterManifest schemaVersion="1.0" xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
     <metadata>
         <name>StandardModuleTemplate</name>
@@ -12,10 +12,14 @@
     <parameters>
         <parameter name='AuthorName' type="user-fullname" prompt="Module author's name" />
         <parameter name='AuthorEmail' type="user-email" prompt="Contributer/Owner email" />
-        <parameter name='CompanyName' type="text" prompt="Company" />
+        <parameter name='CompanyName' type="text" prompt="Contributer/Owner email" />
         <parameter name='ModuleName' type="text" prompt="Name of your module" />
         <parameter name='ModuleDescription' type="text" prompt="Brief description on this module" />
         <parameter name='ModuleVersion' type="text" prompt="Initial module version" default='0.0.1' />
+        <parameter name='License' type = 'choice' prompt='Add an MIT License?' default='0'>
+            <choice label='&amp;Yes' value='Yes' help='Adds LICENSE.md'/>
+            <choice label='&amp;No' value='No' help='Does not adds LICENSE.md'/>
+        </parameter>
     </parameters>
     <content>
         <message>Creating test folder and files</message>
@@ -27,10 +31,24 @@
             <templateFile source='tests\Project.Tests.ps1' destination=''/>
             <file source='tests\README_TESTS.md' destination=''/>
             <templateFile source='tests\Unit.Tests.ps1' destination=''/>
+        <!-- <message>Creating VSCode folder and files</message>
+            <file source='' destination='.vscode'/>
+            <file source='.vscode\settings.json' destination=''/>
+            <file source='.vscode\tasks.json' destination=''/> -->
         <message>Creating code folders</message>
-            <file source='' destination='public'/>
-            <file source='' destination='private'/>
-            <file source='' destination='classes'/>
+            <file source='' destination='$PLASTER_PARAM_ModuleName'/>
+            <file source='' destination='$PLASTER_PARAM_ModuleName\public'/>
+            <file source='' destination='$PLASTER_PARAM_ModuleName\private'/>
+            <file source='' destination='$PLASTER_PARAM_ModuleName\classes'/>
+        <!-- <message condition='$PLASTER_PARAM_GitHub -like "Yes"'>Creating GitHub folder and files</message>
+            <file source='' destination='.github' condition='$PLASTER_PARAM_GitHub -eq "Yes"'/>
+            <file source='.github\ISSUE_TEMPLATE\Bug_report.md' destination='' condition='$PLASTER_PARAM_GitHub -eq "Yes"'/>
+            <file source='.github\ISSUE_TEMPLATE\Feature_request.md' destination='' condition='$PLASTER_PARAM_GitHub -eq "Yes"'/>
+            <file source='.github\PULL_REQUEST_TEMPLATE.md' destination='' condition='$PLASTER_PARAM_GitHub -eq "Yes"'/>
+            <templateFile source='code-of-conduct.md' destination='' condition='$PLASTER_PARAM_GitHub -eq "Yes"'/>
+            <templateFile source='contributing.md' destination='' condition='$PLASTER_PARAM_GitHub -eq "Yes"'/> --> -->
+        <!-- <message condition='$PLASTER_PARAM_License -like "Yes"'>Creating license file</message>
+        <templateFile source='LICENSE.md' destination='' condition='$PLASTER_PARAM_License -like "Yes"'/> -->
         <message>Deploying root directory files</message>
         <templateFile source='CHANGELOG.md' destination=''/>
         <templateFile source='psake.ps1' destination=''/>
