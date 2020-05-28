@@ -4,12 +4,6 @@ See an issue that you can help with? Have an idea for the next great feature? Th
 
 Here are some guidelines for contributing to this project. They are not hard rules, just guidelines.
 
-## Code of Conduct
-
-This project maintains a [code of conduct](code-of-conduct.md) that establishes how the project is governed and how everyone involved is expected to behave.
-
-You can report unacceptable behavior to [<%= $PLASTER_PARAM_AuthorEmail %>](mailto:<%= $PLASTER_PARAM_AuthorEmail %>).
-
 ## TL;DR
 
 * Check if any bugs/issues/features have been previously reported/requested before creating a new issue.

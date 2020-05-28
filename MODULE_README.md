@@ -48,12 +48,6 @@ PS> Uninstall-Module -Name <%= $PLASTER_PARAM_ModuleName %>
 
 Interested in contributing? Read how you can [Contribute](contributing.md) to <%= $PLASTER_PARAM_ModuleName %>
 
-This project maintains a [Code of Conduct](code-of-conduct.md) that establishes how the project is governed and how everyone involved is expected to behave. You can report unacceptable behavior to [<%= $PLASTER_PARAM_AuthorEmail %>](mailto:<%= $PLASTER_PARAM_AuthorEmail %>).
-
 ## Release History
 
 A detailed release history is contained in the [Change Log](CHANGELOG.md).
-
-## License
-
-<%= $PLASTER_PARAM_ModuleName %> is provided under the [MIT license](LICENSE.md).
