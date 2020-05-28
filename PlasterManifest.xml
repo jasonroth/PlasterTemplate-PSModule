@@ -28,9 +28,9 @@
             <file source='tests\README_TESTS.md' destination=''/>
             <templateFile source='tests\Unit.Tests.ps1' destination=''/>
         <message>Creating code folders</message>
-            <file source='' destination='public'/>
-            <file source='' destination='private'/>
-            <file source='' destination='classes'/>
+            <file source='' destination='$PLASTER_PARAM_ModuleName\public'/>
+            <file source='' destination='$PLASTER_PARAM_ModuleName\private'/>
+            <file source='' destination='$PLASTER_PARAM_ModuleName\classes'/>
         <message>Deploying root directory files</message>
         <templateFile source='CHANGELOG.md' destination=''/>
         <templateFile source='psake.ps1' destination=''/>
